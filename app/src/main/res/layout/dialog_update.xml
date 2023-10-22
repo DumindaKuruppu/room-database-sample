@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tvUpdateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/update_record"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvNameLabel"
@@ -26,7 +36,7 @@
         app:layout_constraintBottom_toTopOf="@id/etEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvNameLabel"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvUpdateTitle" />
 
     <TextView
         android:id="@+id/tvEmailLabel"
@@ -49,45 +59,29 @@
         app:layout_constraintStart_toEndOf="@id/tvEmailLabel"
         app:layout_constraintTop_toBottomOf="@id/etName" />
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/add_record"
+    <TextView
+        android:id="@+id/tvUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/update"
+        android:textAllCaps="true"
+        android:textColor="#ff0000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvCancel"
         app:layout_constraintTop_toBottomOf="@id/etEmail" />
 
     <TextView
-        android:id="@+id/tvRecords"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:id="@+id/tvCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/all_the_inserted_records"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/btnAdd" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvEmployeeList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:padding="10dp"
-        android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@id/tvRecords"
-        tools:listitem="@layout/items_row" />
-
-    <TextView
-        android:id="@+id/tvEmptyRecordsError"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:text="@string/no_records_found"
-        android:textColor="@color/black"
-        android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/rvEmployeeList"
-        tools:visibility="visible" />
+        android:text="@string/cancel"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
